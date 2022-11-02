@@ -7,6 +7,9 @@
     --clr-accent-lighter: #F2FBFF;
     --clr-search-bar: #FAFAFA;
     --clr-search-bar-in: #FFFFFF;
+    --clr-text-area: #F3EEEA;
+    --clr-chat-active: #E9EBEB;
+    
 
 }
 
@@ -38,7 +41,6 @@ img {
 }
 
 .chat {
-    background-color: red;
     height: calc(100vh - 48px);
     width: 100%;
 }
@@ -46,6 +48,10 @@ img {
 .site_header {
     height: 70px;
     background-color: var(--clr-light1);
+}
+.left_chat .site_main {
+    height: calc(100% - 70px);
+    
 }
 
 .left_chat {
@@ -94,6 +100,7 @@ img {
 .input-group-text {
     background-color: var(--clr-search-bar-in);
     border-radius: 0;
+    padding: 0.375rem 1rem;
     
 
 }
@@ -103,10 +110,85 @@ img {
     font-size: 0.75rem;
 }
 .contacts{
-    overflow: auto;
+    height: calc(100% - 130px);
+    background-color: var(--clr-search-bar-in);
+    overflow-y: scroll;
 }
 .single_contact{
     height: 80px;
     background-color: var(--clr-search-bar-in);
-    border: 1px solid #F5F5F5;
+    border-top: 1px solid #F5F5F5;
+}
+.personal_details_chat h5{
+    font-size: 1rem;
+}
+.personal_details_chat h6, .last_access, .time{
+    font-size: 0.75rem;
+}
+
+.right_chat main{
+    height: calc(100% - 140px);
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+}
+.right_chat footer{
+    height: 70px;
+    background-color: var(--clr-text-area);
+
+}
+
+.visto::before {
+    font: var(--fa-font-solid);
+    content: "\f560";
+    color: var(--clr-accent);
+  }
+
+ 
+
+.right_chat .input-group-text {
+    background-color: var(--clr-search-bar-in);
+    border-radius: 0;
+    border: none;
+    background-color: var(--clr-text-area);
+    padding: 0.375rem 1.5rem;
+}
+
+
+.super_active{
+    background-color: var(--clr-chat-active);
+}
+.messages{
+    height: 50px;
+    width: 300px;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.2rem;
+    position: relative;
+}
+
+.green{
+    background-color: #D5F9BA;
+    align-self: end;
+
+}
+
+.white{
+    background-color: #FFFFFF;
+}
+.data_in_message{
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    font-size: 0.65rem;
+    color: #B9BFBB;
+    
+}
+
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #ced4da;
+    outline: 0;
+    box-shadow: none;
 }

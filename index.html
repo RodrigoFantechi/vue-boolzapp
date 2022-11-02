@@ -28,14 +28,15 @@
 <body>
 
     <div id="app">
+
         <div class="page_top">
             <div class="container">
                 <div class="chat d-flex">
                     <div class="left_chat">
                         <header class="site_header d-flex align-items-center justify-content-between px-3">
                             <div class="left_header d-flex align-items-center">
-                                <div class="image"><img src="assets/img/avatar_1.jpg" alt=""></div>
-                                <div class="name">Claudia</div>
+                                <div class="image"><img src="assets/img/avatar_io.jpg" alt=""></div>
+                                <div class="name">Sofia</div>
 
                             </div>
                             <div class="right_header d-flex">
@@ -58,30 +59,38 @@
                             </section>
                             <section class="search p-2">
                                 <div class="input-group">
-                                    <div class="input-group-text"><i class="fa-solid fa-magnifying-glass me-3"></i>
+                                    <div class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i>
                                     </div>
                                     <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
                                         aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
                             </section>
                             <section class="contacts">
-                                <div class="single_contact d-flex align-items-center" v-for="person in contacts">
-                                    <div class="image"><img :src="'./assets/img/avatar'+ person.avatar +'.jpg'" alt=""></div>
+                                <div :class=" index == active ? 'super_active' : '' " class="single_contact d-flex align-items-center justify-content-between px-3" v-for="(person, index) in contacts" @click="changeActive(index)">
+                                    <div class="left d-flex">
+                                        <div class="image me-3"><img :src="'./assets/img/avatar'+ person.avatar +'.jpg'"
+                                                alt=""></div>
+                                        <div class="personal_details_chat">
+                                            <h5>{{person.name}}</h5>
+                                            <h6 :class=" person.messages[person.messages.length-1].status =='sent' ? 'visto' : '' "> {{ person.messages[person.messages.length-1].message}}</h6>
+                                        </div>
+                                    </div>
+                                    <div class="rigth">
+                                        <div class="time">{{person.messages[person.messages.length-1].date.slice(11, 16)}}</div>
+                                    </div>
                                 </div>
                             </section>
                         </main>
                         <!-- /.site_main -->
                     </div>
 
-
-
                     <div class="right_chat">
                         <header class="site_header d-flex align-items-center justify-content-between px-3">
                             <div class="left_header d-flex align-items-center">
-                                <div class="image"><img src="assets/img/avatar_1.jpg" alt=""></div>
+                                <div class="image"><img :src="'./assets/img/avatar'+ contacts[active].avatar +'.jpg'" alt=""></div>
                                 <div class="personal_details">
-                                    <div class="name">Claudia</div>
-                                    <div class="last_access"></div>
+                                    <div class="name">{{contacts[active].name}}</div>
+                                    <div class="last_access">Ultimo accesso oggi alle {{contacts[active].messages[0].date.slice(11, 16)}}</div>
                                 </div>
 
                             </div>
@@ -91,17 +100,33 @@
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </header>
+                        <main class="site_main px-5 pt-5 d-flex flex-column">
+                            <div class="messages rounded mb-3 d-flex align-items-center justify-content-between" v-for="message in contacts[active].messages" :class=" message.status === 'sent' ? 'green' : 'white' ">
+                            <div>{{message.message}}</div>
+                            <div class="data_in_message">{{message.date.slice(11, 16)}}</div>
+                        
+                        </div>
+
+                        </main>
+                        <!-- /.site_main -->
+                        <footer class="site_footer d-flex align-items-center  ">
+                            <div class="input-group">
+                                <span class="input-group-text "><i class="fa-regular fa-face-smile"></i></span>
+                                <input type="text" class="form-control rounded" placeholder="Scrivi un messaggio">
+                                <span class="input-group-text"><i class="fa-solid fa-microphone"></i></span>
+                              </div>
+                        </footer>
+                        <!-- /.site_footer -->
                     </div>
                 </div>
             </div>
         </div>
-
-
         <!-- /.page_top -->
+
+
+
         <div class="page_bottom"></div>
         <!-- /.page_bottom -->
-
-
     </div>
     <!-- SCRIPT -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
