@@ -1,0 +1,112 @@
+:root {
+    --clr-nav: #009688;
+    --clr-lighter: #DBDBD3;
+    --clr-light1: #EAEAEA;
+    --clr-light2: #D6D6D6;
+    --clr-accent: #8EDAFC;
+    --clr-accent-lighter: #F2FBFF;
+    --clr-search-bar: #FAFAFA;
+    --clr-search-bar-in: #FFFFFF;
+
+}
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+.page_top {
+    padding-top: 24px;
+    position: relative;
+    height: 145px;
+    background-color: var(--clr-nav);
+    width: 100%;
+}
+
+.page_bottom {
+    background-color: var(--clr-lighter);
+    height: calc(100vh - 145px);
+}
+
+.chat {
+    background-color: red;
+    height: calc(100vh - 48px);
+    width: 100%;
+}
+
+.site_header {
+    height: 70px;
+    background-color: var(--clr-light1);
+}
+
+.left_chat {
+    width: 537px;
+    border-right: 1px solid var(--clr-light2);
+    height: 100%;
+}
+
+.right_chat {
+    width: calc(100% - 537px);
+    height: 100%;
+    background-color: blue;
+}
+
+.image {
+    height: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.image img {
+    object-fit: contain;
+    border-radius: 50%;
+}
+.left_chat .jumbotron{
+    background-color: var(--clr-accent);
+    height: 80px;
+}
+.jumbotron .image{
+    background-color: var(--clr-accent-lighter);
+}
+.jumbotron h5{
+    font-size: 1rem;
+}
+.jumbotron h6{
+    font-size: 0.75rem;
+    text-decoration: underline;
+}
+.search{
+    background-color: var(--clr-search-bar);
+    height: 50px;
+}
+
+
+.input-group-text {
+    background-color: var(--clr-search-bar-in);
+    border-radius: 0;
+    
+
+}
+.form-control {
+    border-radius: 0;
+    background-color: var(--clr-search-bar-in);
+    font-size: 0.75rem;
+}
+.contacts{
+    overflow: auto;
+}
+.single_contact{
+    height: 80px;
+    background-color: var(--clr-search-bar-in);
+    border: 1px solid #F5F5F5;
+}
