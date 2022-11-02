@@ -4,9 +4,11 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            cane :'',
             active: 0,
             contacts: [
                 {
+        
                     name: 'Michele',
                     avatar: '_1',
                     visible: true,
@@ -170,10 +172,25 @@ createApp({
             ]
         }
     },
-    methods:{
-        changeActive(index){
-this.active = index;
-        }
-    }
+    methods: {
+        changeActive(index) {
+            this.active = index;
+            const appoggio = this.contacts[this.active].messages;
+            appoggio.forEach(message => {
+              if(message.status === 'received'){
+                  this.cane = message.date.slice(11, 16)
+              }
+            });
+        },
+    
+    },
+    mounted() {
+        const appoggio = this.contacts[this.active].messages;
+        appoggio.forEach(message => {
+          if(message.status === 'received'){
+              this.cane = message.date.slice(11, 16)
+          }
+        });
+      }
 }).mount('#app')
 
