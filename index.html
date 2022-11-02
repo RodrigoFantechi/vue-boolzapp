@@ -90,7 +90,7 @@
                                 <div class="image"><img :src="'./assets/img/avatar'+ contacts[active].avatar +'.jpg'" alt=""></div>
                                 <div class="personal_details">
                                     <div class="name">{{contacts[active].name}}</div>
-                                    <div class="last_access">Ultimo accesso oggi alle {{contacts[active].messages[0].date.slice(11, 16)}}</div>
+                                    <div class="last_access">Ultimo accesso oggi alle {{contacts[active].messages[contacts[active].messages.length-1].date.slice(11, 16)}}</div>
                                 </div>
 
                             </div>
