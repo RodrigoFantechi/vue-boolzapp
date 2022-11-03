@@ -211,12 +211,10 @@ createApp({
                 const nomeUtente = person.name.toLowerCase();
                 const input = this.username.toLowerCase()
                 let lettereUtente ='';
-                let lettereInput='';
                 for (let i = 0; i < nomeUtente.length ; i++) {
                      lettereUtente += nomeUtente.charAt(i);
-                     lettereInput += input.charAt(i);
-    
-                    if (lettereUtente === lettereInput){
+                    console.log(input, lettereUtente);
+                    if (lettereUtente === input){
                         person.visible = true
                     } 
                 }
@@ -224,9 +222,6 @@ createApp({
                     person.visible = true
                 }
             });
-
-            
-            
         }
     
     },
