@@ -1,0 +1,193 @@
+:root {
+    --clr-nav: #009688;
+    --clr-lighter: #DBDBD3;
+    --clr-light1: #EAEAEA;
+    --clr-light2: #D6D6D6;
+    --clr-accent: #8EDAFC;
+    --clr-accent-lighter: #F2FBFF;
+    --clr-search-bar: #FAFAFA;
+    --clr-search-bar-in: #FFFFFF;
+    --clr-text-area: #F3EEEA;
+    --clr-chat-active: #E9EBEB;
+    
+
+}
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+.page_top {
+    padding-top: 24px;
+    position: relative;
+    height: 145px;
+    background-color: var(--clr-nav);
+    width: 100%;
+}
+
+.page_bottom {
+    background-color: var(--clr-lighter);
+    height: calc(100vh - 145px);
+}
+
+.chat {
+    height: calc(100vh - 48px);
+    width: 100%;
+}
+
+.site_header {
+    height: 70px;
+    background-color: var(--clr-light1);
+}
+.left_chat .site_main {
+    height: calc(100% - 70px);
+    
+}
+
+.left_chat {
+    width: 537px;
+    border-right: 1px solid var(--clr-light2);
+    height: 100%;
+}
+
+.right_chat {
+    width: calc(100% - 537px);
+    height: 100%;
+}
+
+.image {
+    height: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.image img {
+    object-fit: contain;
+    border-radius: 50%;
+}
+.left_chat .jumbotron{
+    background-color: var(--clr-accent);
+    height: 80px;
+}
+.jumbotron .image{
+    background-color: var(--clr-accent-lighter);
+}
+.jumbotron h5{
+    font-size: 1rem;
+}
+.jumbotron h6{
+    font-size: 0.75rem;
+    text-decoration: underline;
+}
+.search{
+    background-color: var(--clr-search-bar);
+    height: 50px;
+}
+
+
+.input-group-text {
+    background-color: var(--clr-search-bar-in);
+    border-radius: 0;
+    padding: 0.375rem 1rem;
+    
+
+}
+.form-control {
+    border-radius: 0;
+    background-color: var(--clr-search-bar-in);
+    font-size: 0.75rem;
+}
+.contacts{
+    height: calc(100% - 130px);
+    background-color: var(--clr-search-bar-in);
+    overflow-y: scroll;
+}
+.single_contact{
+    height: 80px;
+    background-color: var(--clr-search-bar-in);
+    border-top: 1px solid #F5F5F5;
+}
+.personal_details_chat h5{
+    font-size: 1rem;
+}
+.personal_details_chat h6, .last_access, .time{
+    font-size: 0.75rem;
+}
+
+.right_chat main{
+    height: calc(100% - 140px);
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+}
+.right_chat footer{
+    height: 70px;
+    background-color: var(--clr-text-area);
+
+}
+
+.visto::before {
+    font: var(--fa-font-solid);
+    content: "\f560";
+    color: #B1B1B1;
+  }
+
+ 
+
+.right_chat .input-group-text {
+    background-color: var(--clr-search-bar-in);
+    border-radius: 0;
+    border: none;
+    background-color: var(--clr-text-area);
+    padding: 0.375rem 1.5rem;
+}
+
+
+.super_active{
+    background-color: var(--clr-chat-active);
+}
+.messages{
+    height: 50px;
+    width: 300px;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.2rem;
+    position: relative;
+}
+
+.green{
+    background-color: #D5F9BA;
+    align-self: end;
+
+}
+
+.white{
+    background-color: #FFFFFF;
+}
+.data_in_message{
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    font-size: 0.65rem;
+    color: #B9BFBB;
+    
+}
+
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #ced4da;
+    outline: 0;
+    box-shadow: none;
+}
