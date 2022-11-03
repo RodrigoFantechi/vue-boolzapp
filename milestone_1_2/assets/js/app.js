@@ -6,12 +6,6 @@ createApp({
         return {
             cane :'',
             active: 0,
-            newMessage:{
-                date: '10/01/2020 15:30:55',
-                message: '',
-                status: 'sent'
-
-            },
             contacts: [
                 {
         
@@ -188,22 +182,6 @@ createApp({
               }
             });
         },
-        addMessage(){
-            const message = {
-                ... this.newMessage
-            }
-            this.contacts[this.active].messages.push(message) 
-            this.newMessage.message=''
-            setTimeout(this.reply, 1000);
-        },
-        reply(){
-            const message = {
-                date: '10/01/2020 15:30:55',
-                message: 'ok',
-                status: 'received'
-            } 
-            this.contacts[this.active].messages.push(message) 
-        }
     
     },
     mounted() {
