@@ -193,11 +193,16 @@ createApp({
         },
         addMessage() {
             const message = {
-                ... this.newMessage
+                date: new Date().toLocaleDateString() + '  ' + new Date().toLocaleTimeString(),
+                message: this.newMessage.message,
+                status: 'sent'
             }
-            this.contacts[this.active].messages.push(message)
-            this.newMessage.message = ''
+            if (message.message !=="") {
+                this.contacts[this.active].messages.push(message)
+                this.newMessage.message = ''
             setTimeout(this.reply, 1000);
+            }
+            
         },
         reply() {
             const message = {
@@ -257,3 +262,7 @@ createApp({
     }
 }).mount('#app')
 
+function validate(input){
+    if(/^\s/.test(input.value))
+      input.value = '';
+  }
