@@ -8,7 +8,7 @@ createApp({
             cane :'',
             active: 0,
             newMessage:{
-                date: '10/01/2020 15:30:55',
+                date: new Date().toLocaleDateString() + '  '+ new Date().toLocaleTimeString(),
                 message: '',
                 status: 'sent'
             },
@@ -198,11 +198,17 @@ createApp({
         },
         reply(){
             const message = {
-                date: '10/01/2020 15:30:55',
+                date: new Date().toLocaleDateString() + '  '+ new Date().toLocaleTimeString(),
                 message: 'ok',
                 status: 'received'
             } 
             this.contacts[this.active].messages.push(message) 
+            const appoggio = this.contacts[this.active].messages;
+            appoggio.forEach(message => {
+              if(message.status === 'received'){
+                  this.cane = message.date.slice(11, 16)
+              }
+            });
         },
         findname(){
               
