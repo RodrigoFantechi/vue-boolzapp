@@ -5,6 +5,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            appoggio2 :'',
             replies: [
                 'ok',
                 'non sono dell\'umore',
@@ -207,7 +208,7 @@ createApp({
                 message: this.newMessage.message,
                 status: 'sent'
             }
-            if (message.message !== "") {
+            if (message.message !== this.appoggio2) {
                 this.contacts[this.active].messages.push(message)
                 this.newMessage.message = ''
                 this.a = true
@@ -225,6 +226,8 @@ createApp({
                         }
                     });
                 }, 5000);
+            } else{
+                this.newMessage.message = '';
             }
 
         },
@@ -269,10 +272,22 @@ createApp({
             this.contacts[this.active].messages.splice(index, 1);
         },
         checkInput() {
-            this.a = false;
-            if (this.newMessage.message === '') {
-                this.a = true;
+            let appoggio = '';
+            for(let i = 0; i < this.newMessage.message.length; i++){
+                appoggio += ' ';
+                this.appoggio2 = appoggio;
+
+                if(this.newMessage.message === appoggio){
+                    this.a = true 
+                } else if(this.newMessage.message === '') {
+                    this.a = true;
+                }
+                else{
+                    this.a = false
+                }
             }
+
+               
 
         },
         eliminaMessaggi(){
@@ -298,10 +313,6 @@ createApp({
     }
 }).mount('#app')
 
-function validate(input) {
-    if (/^\s/.test(input.value))
-        input.value = '';
-}
 
 
 

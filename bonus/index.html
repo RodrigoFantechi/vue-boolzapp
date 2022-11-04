@@ -87,7 +87,7 @@
                                     <div v-else></div>
                                 </div>
                             </div>
-                            <div class="single_contact grey d-flex align-items-center ps-3" @click="addNewContact">
+                            <div class="single_contact grey d-flex align-items-center ps-3">
                                 <div class="image d-flex align-items-center justify-content-center"><i class="fa-solid fa-plus"></i></div>
                                 <h6 class="mb-0 ms-3">Aggiungi nuovo contatto</h6>
                             </div>
@@ -140,7 +140,7 @@
                         <div class="input-group">
                             <span class="input-group-text "><i class="fa-regular fa-face-smile"></i></span>
                             <input type="text" class="form-control rounded" placeholder="Scrivi un messaggio"
-                                v-model="newMessage.message" @keyup.enter="addMessage" oninput="validate(this)"
+                                v-model="newMessage.message" @keyup.enter="addMessage" 
                                 @input="checkInput">
                             <span class="input-group-text">
                                 <template v-if="a">
