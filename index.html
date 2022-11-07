@@ -31,6 +31,25 @@
 
 
         <div class="container">
+
+            <div class="pop-up rounded shadow-sm pb-3 text-center" v-show="openPopUp">
+
+                <div class="close" @click="openPopUp = false"><i class="fa-solid fa-xmark"></i></div>
+                <div class="image m-auto my_gb mt-3 mb-3">
+                   <img :src=initialPictures alt="">
+                </div>
+                <input type="text" class="form-control inputNome rounded mb-3" placeholder="Inserisci nome ">
+
+                <div class="image_pictures d-flex rounded flex-wrap ">
+                    <div class="col-3 d-flex justify-content-center mb-3" v-for="(person, index) in contacts">
+                        <div class="image" @click="cambiaImage(index)">
+                            <img :src="'./assets/img/avatar'+ person.avatar +'.jpg'" alt="">
+                        </div>
+                    </div>
+                </div>
+                <button class="btn  btn-outline-dark mt-3">Invia</button>
+            </div>
+
             <div class="chat d-flex">
                 <div class="left_chat">
                     <header class="site_header d-flex align-items-center justify-content-between px-3">
@@ -87,8 +106,9 @@
                                     <div v-else></div>
                                 </div>
                             </div>
-                            <div class="single_contact grey d-flex align-items-center ps-3">
-                                <div class="image d-flex align-items-center justify-content-center"><i class="fa-solid fa-plus"></i></div>
+                            <div class="single_contact grey d-flex align-items-center ps-3" @click="openPopUp = true">
+                                <div class="image d-flex align-items-center justify-content-center"><i
+                                        class="fa-solid fa-plus"></i></div>
                                 <h6 class="mb-0 ms-3">Aggiungi nuovo contatto</h6>
                             </div>
                         </section>
@@ -140,8 +160,7 @@
                         <div class="input-group">
                             <span class="input-group-text "><i class="fa-regular fa-face-smile"></i></span>
                             <input type="text" class="form-control rounded" placeholder="Scrivi un messaggio"
-                                v-model="newMessage.message" @keyup.enter="addMessage" 
-                                @input="checkInput">
+                                v-model="newMessage.message" @keyup.enter="addMessage" @input="checkInput">
                             <span class="input-group-text">
                                 <template v-if="a">
                                     <i class="fa-solid fa-microphone"></i>
@@ -159,10 +178,9 @@
     </div>
 
     <!-- SCRIPT -->
-    <script src="https://unpkg.com/vue-emoji-picker/dist/vue-emoji-picker.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="assets/js/app.js"></script>
-   
+
 
 
     <!-- BOOTSTRAP -->

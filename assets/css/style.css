@@ -239,6 +239,56 @@ footer .fa-solid, footer .fa-regular{
     font-size: 1.5rem;
     color: #6B7376;
 }
+.pop-up{
+    background-color: white;
+    z-index: 1000;
+   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    transform: translate(-50%, -50%);
+   
+}
+
+.image_pictures .image {
+    height: 80px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.image_pictures .image img {
+    object-fit: contain;
+    border-radius: 50%;
+}
+.image_pictures{
+    padding: 1rem;
+    width: 550px;
+    margin: auto;
+    border: 1px solid var(--clr-lighter);
+}
+.my_gb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: #8EDAFC;
+    
+}
 
 
-  
+.inputNome{
+    width: 350px;
+    margin: auto;
+}
+
+.close{
+    padding: 0.2rem;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.image_pictures .image img:hover{
+
+} 

@@ -5,6 +5,8 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            initialPictures: 'assets/img/profile.svg',
+            openPopUp : false,
             appoggio2 :'',
             replies: [
                 'ok',
@@ -298,8 +300,11 @@ createApp({
         eliminaChat(){
             this.contacts.splice(this.active, 1);
             this.openMessage = false
+        },
+        cambiaImage(index){
+        this.initialPictures = './assets/img/avatar' + this.contacts[index].avatar +'.jpg'
+        
         }
-
     },
     mounted() {
 
