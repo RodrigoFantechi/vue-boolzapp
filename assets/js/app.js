@@ -277,7 +277,6 @@ createApp({
             let appoggio = '';
             for(let i = 0; i < this.newMessage.message.length; i++){
                 appoggio += ' ';
-                this.appoggio2 = appoggio;
 
                 if(this.newMessage.message === appoggio){
                     this.a = true 
@@ -307,7 +306,6 @@ createApp({
         }
     },
     mounted() {
-
         const appoggio = this.contacts[this.active].messages;
         appoggio.forEach(message => {
             if (message.status === 'received') {
